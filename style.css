@@ -338,7 +338,6 @@ section {
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1.5rem;
-  cursor: pointer;
   position: relative;
   overflow: hidden;
   transition: transform var(--tr), box-shadow var(--tr), border-color var(--tr);
@@ -353,11 +352,15 @@ section {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg,
+  background: linear-gradient(
+    135deg,
     rgba(99,102,241,0.05),
-    rgba(34,211,238,0.05));
+    rgba(34,211,238,0.05)
+  );
   opacity: 0;
   transition: opacity var(--tr);
+
+  pointer-events: none;
 }
 
 .project-card:hover {
@@ -393,6 +396,9 @@ section {
   color: var(--violet-h);
   background: transparent;
   transition: background var(--tr), color var(--tr), transform var(--tr);
+
+  position: relative;
+  z-index: 10;
 }
 
 .project-btn:hover {
